@@ -1,0 +1,38 @@
+.opcolor .chzn-results .chzn-opcolor {
+	display:block;
+	float:left;
+	margin: 0 5px 5px 0;
+	cursor: pointer;
+}
+.opcolor .chzn-results .chzn-opcolor li {
+	padding: 4px 13px
+}
+.opcolor .chzn-results .chzn-opcolor:hover {
+	background-color: #888;
+}
+.opcolor .chzn-results .chzn-oppreview {
+	background-color: #004898;
+	color: white;
+	display: block;
+	height: 55px;
+	padding: 11px;
+	width: 59px;
+	border: 1px solid gray;
+}
+.opcolor .chzn-results .chzn-oppreview span {
+	display: inline;
+	white-space: pre-line;
+	word-wrap: normal;
+}
+.opcolor .chzn-results .textColors {
+	font-weight: normal;
+}
+.opcolor .chzn-container .chzn-drop {
+	width: 100%;
+}
+.opcolor li {
+
+}
+.opcolor.field .chzn-container {
+    max-width: 512px;
+}
