@@ -1,0 +1,17 @@
+{
+	"name": "otago/opcolor",
+	"description": "a color palette dropdown",
+	"type": "silverstripe-module",
+	"homepage": "https://github.com/otago/opcolor",
+	"keywords": ["silverstripe", "color dropdown", "color field", "color"],
+	"license": "BSD-3-Clause",
+	"authors": [
+		{"name": "Torleif","email": "torleifw@op.ac.nz"}
+	],
+	"support": {
+		"issues": "https://github.com/otago/opcolor/issues"
+	},
+	"require": {
+		"silverstripe/framework": "~3.1"
+	}
+}
