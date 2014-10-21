@@ -2,15 +2,15 @@
 
 Creates a colour palette dropdown.
 
-##images
+##Colour selector
 
-![OP color in the settings](https://raw.githubusercontent.com/otago/opcolor/master/images/image1.png)
+![OP colour in the CMS](https://raw.githubusercontent.com/otago/opcolor/master/images/image2.png)
 
-Create your accepted colors and names in the settings tab in the CMS
+Create your accepted colours and names in the settings tab in the CMS
 
-![OP color in the CMS](https://raw.githubusercontent.com/otago/opcolor/master/images/image2.png)
+![OP colour in the settings](https://raw.githubusercontent.com/otago/opcolor/master/images/image1.png)
 
-use the drop down to select your color
+use the drop down to select your colour
 
 ##usage
 
