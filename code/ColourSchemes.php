@@ -4,7 +4,7 @@
  * Most Pages have a series of large hero images above the fold.
  * 
  */
-class ColourShemes extends DataObject {
+class ColourSchemes extends DataObject {
 
 	public static $summary_fields = array(
 		'ID' => 'ID',

@@ -3,12 +3,12 @@
 class OpColorField extends DropdownField {
     
 	public function __construct($name, $title=null, $value='', $form=null, $emptyString=null) {
-        $source = ColourShemes::get()->sort('ID')->map('CSSColor','OPColor');
+        $source = ColourSchemes::get()->sort('ID')->map('CSSColor','OPColor');
 		parent::__construct($name, $title, $source, $value, $form, $emptyString);
         
         $this->CurrentTitle = '';
         if($value != "") {
-            $star = ColourShemes::get()->where(array("\"CSSColor\" = '".$value."'"))->first();
+            $star = ColourSchemes::get()->where(array("\"CSSColor\" = '".$value."'"))->first();
 			if($star)
 	            $this->CurrentTitle = $star->OPColor;
         }
@@ -33,7 +33,7 @@ class OpColorField extends DropdownField {
         $dobj->CSSCMYK = '0 0 0 0';
         $obj->Options->push($dobj);
         
-		$source = ColourShemes::get()->sort('ID');
+		$source = ColourSchemes::get()->sort('ID');
         if($source) {
             foreach($source as $value) {
                 $mobj = DataObject::create();
