@@ -4,8 +4,8 @@
 	margin: 0 5px 5px 0;
 	cursor: pointer;
 }
-.opcolor .chzn-results .chzn-opcolor li {
-	padding: 4px 13px
+.opcolor .chzn-container .chzn-results li {
+	padding: 4px 8px
 }
 .opcolor .chzn-results .chzn-opcolor:hover {
 	background-color: #888;

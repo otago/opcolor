@@ -3,6 +3,7 @@
 class OpColorField extends DropdownField {
     
 	public function __construct($name, $title=null, $value='', $form=null, $emptyString=null) {
+		$this->addExtraClass('dropdown');
         $source = ColourSchemes::get()->sort('ID')->map('CSSColor','OPColor');
 		parent::__construct($name, $title, $source, $value, $form, $emptyString);
         
@@ -12,6 +13,7 @@ class OpColorField extends DropdownField {
 			if($star)
 	            $this->CurrentTitle = $star->OPColor;
         }
+		
         Requirements::css(OPCOLORWORKINGFOLDER.'/css/OpColorField.css');
         Requirements::javascript(OPCOLORWORKINGFOLDER.'/javascript/OpColorField.js');
 	}
@@ -49,5 +51,6 @@ class OpColorField extends DropdownField {
         $tmp = $obj->renderWith("../themes/op/templates/Fields/OpColorField.ss");
         return $tmp;
     }
+	
 }
 
