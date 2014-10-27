@@ -41,6 +41,35 @@ jQuery('.cms .field.opcolor').entwine({
 		var myid = selectcontainer.attr('id');
 		var _this = this;
 		
+		var rebuilddropdown = function (mydropdown) {
+			var options = new Array();
+			mydropdown.find('option').each(function (){
+				options.push(this);
+			});
+			// populate the dropdown field with the colors
+			mydropdown.find(".chzn-results").each(function () {
+				var resultsdiv = mydropdown.find('.chzn-results');
+				var idcount = 0;
+				jQuery.each(options, function (index, value) {
+					var rgb = jQuery(value).attr('data-rgb');
+					var hex = jQuery(value).attr('data-hex');
+					var cmyk = jQuery(value).attr('data-cmyk');
+					var myvalue = jQuery(value).attr('value');
+					var title = jQuery(value).html();
+					var spancolor = '<span data-value=\"'+myvalue+
+						'\" data-title=\"'+title+
+						'\" class=\"chzn-oppreview\" style=\"background-color:'+hex+'\"><span>'+
+						title+'</span></span><br/>';
+					var spantext = '<strong>CMYK</strong><br/><span class=\"textColors\">'+cmyk;
+					spantext = spantext+'</span><br/><strong>RGB</strong><br/><span class=\"textColors\">'+rgb;
+					spantext = spantext+'<br/>'+hex+'</span>';
+
+					myid = myid + "_o_" + (idcount++);
+					resultsdiv.append('<li class=\"chzn-opcolor active-result\" id="'+myid+'">'+
+						spancolor+spantext+'</li>');
+				});
+			});
+		}
 		jQuery(_this).find('select').on('liszt:showing_dropdown', function () {
 			_this.find('li').hide();
 			_this.find('.chzn-search').remove();
@@ -59,35 +88,6 @@ jQuery('.cms .field.opcolor').entwine({
 				defaultColor = checkColor;
 			}
 			
-			var rebuilddropdown = function (mydropdown) {
-				var options = new Array();
-				mydropdown.find('option').each(function (){
-					options.push(this);
-				});
-				// populate the dropdown field with the colors
-				mydropdown.find(".chzn-results").each(function () {
-					var resultsdiv = mydropdown.find('.chzn-results');
-					var idcount = 0;
-					jQuery.each(options, function (index, value) {
-						var rgb = jQuery(value).attr('data-rgb');
-						var hex = jQuery(value).attr('data-hex');
-						var cmyk = jQuery(value).attr('data-cmyk');
-						var myvalue = jQuery(value).attr('value');
-						var title = jQuery(value).html();
-						var spancolor = '<span data-value=\"'+myvalue+
-							'\" data-title=\"'+title+
-							'\" class=\"chzn-oppreview\" style=\"background-color:'+hex+'\"><span>'+
-							title+'</span></span><br/>';
-						var spantext = '<strong>CMYK</strong><br/><span class=\"textColors\">'+cmyk;
-						spantext = spantext+'</span><br/><strong>RGB</strong><br/><span class=\"textColors\">'+rgb;
-						spantext = spantext+'<br/>'+hex+'</span>';
-
-						myid = myid + "_o_" + (idcount++);
-						resultsdiv.append('<li class=\"chzn-opcolor active-result\" id="'+myid+'">'+
-							spancolor+spantext+'</li>');
-					});
-				});
-			}
 		}
 		this.tabs();
 	}
