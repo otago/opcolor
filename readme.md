@@ -12,9 +12,13 @@ Create your accepted colours and names in the settings tab in the CMS
 
 use the drop down to select your colour
 
-##usage
+##Usage
 
 ```
+	public static $db = array(
+		'ClassOverride' => 'Text'
+	);
+
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 		// create the op color field
@@ -25,3 +29,9 @@ use the drop down to select your colour
 		return $fields;
 	}
 ```
+
+##What it does
+
+It stores the CSSColor in the specified text field. Note the RGB color is the 
+value that colors the box in the dropdown field. Other values, such as the 
+CSSHex and CSSCMYK are optional. 
