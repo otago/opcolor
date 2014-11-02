@@ -47,8 +47,9 @@ class OpColorField extends DropdownField {
 				$obj->Options->push($mobj);
 			}
 		}
+		
 		// directly point to the template file
-		$tmp = $obj->renderWith("../themes/op/templates/Fields/OpColorField.ss");
+		$tmp = $obj->renderWith(BASE_PATH.'/'.OPCOLORWORKINGFOLDER."/templates/OpColorField.ss");
 		return $tmp;
 	}
 
