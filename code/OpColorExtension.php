@@ -9,7 +9,7 @@ class OpColorExtension extends Extension {
 
 	public function updateEditForm(&$form) {
 		$form->Fields()->fieldByName('Root')->push(
-				$tabMain = new Tab('Colour Shemes', GridField::create(
+				$tabMain = new Tab('Colour Schemes', GridField::create(
 						'ColourSchemes', null, ColourSchemes::get()->sort('ID'), GridFieldConfig_RecordEditor::create()
 				)->setForm($form)
 		));
