@@ -9,6 +9,7 @@ class OpColorField extends DropdownField {
         $this->toggleStar();
 		Requirements::css(OPCOLORWORKINGFOLDER . '/css/OpColorField.css');
 		Requirements::javascript(OPCOLORWORKINGFOLDER . '/javascript/OpColorField.js');
+		$this->hasEmptyDefault = true;
 	}
     
     /**
