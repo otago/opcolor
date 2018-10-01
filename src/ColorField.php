@@ -1,15 +1,33 @@
 <?php
 
-class OpColorField extends DropdownField {
+/**
+ * builds a fancy dropdown for users to select a predefined color
+ */
+namespace OP;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\ORM\ArrayList;
+use Exception;
+use SilverStripe\ORM\Map;
+use SilverStripe\View\Requirements;
+use SilverStripe\ORM\DataObject;
+
+class ColorField extends DropdownField {
 
 	public function __construct($name, $title = null, $value = '', $form = null, $emptyString = null) {
+		
 		$this->addExtraClass('dropdown');
-		$source = ColourSchemes::get()->sort('ID')->map('CSSColor', 'OPColor');
+		$source = ColorSchemes::get()->sort('ID')->map('CSSColor', 'OPColor');
 		parent::__construct($name, $title, $source, $value, $form, $emptyString);
         $this->toggleStar();
-		Requirements::css(OPCOLORWORKINGFOLDER . '/css/OpColorField.css');
-		Requirements::javascript(OPCOLORWORKINGFOLDER . '/javascript/OpColorField.js');
+		//Requirements::css(OPCOLORWORKINGFOLDER . '/css/OpColorField.css');
+		//Requirements::javascript(OPCOLORWORKINGFOLDER . '/javascript/OpColorField.js');
+		
+		
+		Requirements::css('otago/opcolor: css/ColorField.css');
+		Requirements::javascript('otago/opcolor: javascript/ColorField.js');
+		
 		$this->hasEmptyDefault = true;
+		$this->addExtraClass('opcolor');
 	}
     
     /**
@@ -31,8 +49,8 @@ class OpColorField extends DropdownField {
 	 */
 	public function setSource($source) {
 		parent::setSource($source);
-		if(!($source instanceof SS_Map)) {
-			throw new Exception('SS_Map');
+		if(!($source instanceof Map)) {
+			throw new Exception('source not map');
 		}
 		$this-> toggleStar();
 		return $this;
@@ -77,7 +95,7 @@ class OpColorField extends DropdownField {
 		));
 		$obj->Options->push($dobj);
 
-		//go through source, if object it is a custom color, if not, get data from ColourSchemes
+		//go through source, if object it is a custom color, if not, get data from ColorSchemes
 		foreach ($this->getSource() as $value) {
 			$mobj = DataObject::create();
 			if($value instanceof Object){
@@ -87,7 +105,7 @@ class OpColorField extends DropdownField {
 				$mobj->CSSHex = $value->CSSHex;
 				$mobj->CSSCMYK = $value->CSSCMYK;
 			} else {
-				$cs = ColourSchemes::get()->filter('OPColor', $value)->first();
+				$cs = ColorSchemes::get()->filter('OPColor', $value)->first();
 				if (!empty($cs)) {
 					$mobj->MyTitle = $cs->OPColor;
 					$mobj->Value = $cs->CSSColor;
@@ -98,9 +116,13 @@ class OpColorField extends DropdownField {
 			}
 			$obj->Options->push($mobj);
 		}
+//	public function forTemplate() {
+//		$shortname = (new \ReflectionClass($this))->getShortName();
+//		return $this->renderWith(array('Tiles/' . $shortname, $shortname));
+//	}
 		
 		// directly point to the template file
-		$tmp = $obj->renderWith(BASE_PATH.'/'.OPCOLORWORKINGFOLDER."/templates/OpColorField.ss");
+		$tmp = $obj->renderWith(["ColorField"]);
 		return $tmp;
 	}
 

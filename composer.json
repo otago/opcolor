@@ -1,7 +1,7 @@
 {
 	"name": "otago/opcolor",
 	"description": "a color palette dropdown",
-	"type": "silverstripe-module",
+	"type": "silverstripe-vendormodule",
 	"homepage": "https://github.com/otago/opcolor",
 	"keywords": ["silverstripe", "color dropdown", "color field", "color"],
 	"license": "BSD-3-Clause",
@@ -12,6 +12,13 @@
 		"issues": "https://github.com/otago/opcolor/issues"
 	},
 	"require": {
-		"silverstripe/framework": "~3.1"
+		"silverstripe/vendor-plugin": "^1.0",
+		"silverstripe/framework": "~4.1"
+	},
+	"extra": {
+		"expose": [
+			"javascript",
+			"css"
+		]
 	}
 }

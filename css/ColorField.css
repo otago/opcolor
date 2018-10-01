@@ -1,16 +1,16 @@
-.opcolor .chzn-results .chzn-opcolor {
+.opcolor .chosen-results .chosen-opcolor {
 	display:block;
 	float:left;
 	margin: 0 5px 5px 0;
 	cursor: pointer;
 }
-.opcolor .chzn-container .chzn-results li {
+.opcolor .chosen-container .chosen-results li {
 	padding: 4px 8px
 }
-.opcolor .chzn-results .chzn-opcolor:hover {
+.opcolor .chosen-results .chosen-opcolor:hover {
 	background-color: #888;
 }
-.opcolor .chzn-results .chzn-oppreview {
+.opcolor .chosen-results .chosen-oppreview {
 	background-color: #004898;
 	color: white;
 	display: block;
@@ -19,20 +19,20 @@
 	width: 59px;
 	border: 1px solid gray;
 }
-.opcolor .chzn-results .chzn-oppreview span {
+.opcolor .chosen-results .chosen-oppreview span {
 	display: inline;
 	white-space: pre-line;
 	word-wrap: normal;
 }
-.opcolor .chzn-results .textColors {
+.opcolor .chosen-results .textColors {
 	font-weight: normal;
 }
-.opcolor .chzn-container .chzn-drop {
+.opcolor .chosen-container .chosen-drop {
 	width: 100%;
 }
 .opcolor li {
 
 }
-.opcolor.field .chzn-container {
+.opcolor.field .chosen-container {
     max-width: 512px;
 }

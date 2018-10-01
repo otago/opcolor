@@ -1,0 +1,6 @@
+---
+Name: Color
+---
+SilverStripe\SiteConfig\SiteConfigLeftAndMain:
+    extensions:
+        - OP\SiteConfigLeftAndMainExtension
