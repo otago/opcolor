@@ -16,7 +16,7 @@ class SiteConfigLeftAndMainExtension extends Extension {
 	public function updateEditForm(&$form) {
 		$form->Fields()->fieldByName('Root')->push(
 				$tabMain = new Tab('Color Schemes', GridField::create(
-						'ColorSchemes', null, ColorSchemes::get()->sort('ID'), GridFieldConfig_RecordEditor::create()
+						'ColorScheme', null, ColorScheme::get()->sort('ID'), GridFieldConfig_RecordEditor::create()
 				)->setForm($form)
 		));
 	}

@@ -6,9 +6,9 @@ use SilverStripe\Forms\TextField;
 /**
  * describes a color in the backend
  */
-class ColorSchemes extends DataObject {
+class ColorScheme extends DataObject {
 
-	private static $table_name = 'ColorSchemes';
+	private static $table_name = 'ColorScheme';
 	private static $summary_fields = [
 		'ID' => 'ID',
 		'OPColor' => 'OP Color',

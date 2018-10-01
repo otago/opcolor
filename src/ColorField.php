@@ -16,7 +16,7 @@ class ColorField extends DropdownField {
 	public function __construct($name, $title = null, $value = '', $form = null, $emptyString = null) {
 		
 		$this->addExtraClass('dropdown');
-		$source = ColorSchemes::get()->sort('ID')->map('CSSColor', 'OPColor');
+		$source = ColorScheme::get()->sort('ID')->map('CSSColor', 'OPColor');
 		parent::__construct($name, $title, $source, $value, $form, $emptyString);
         $this->toggleStar();
         
@@ -92,7 +92,7 @@ class ColorField extends DropdownField {
 		));
 		$obj->Options->push($dobj);
 
-		//go through source, if object it is a custom color, if not, get data from ColorSchemes
+		//go through source, if object it is a custom color, if not, get data from ColorScheme
 		foreach ($this->getSource() as $value) {
 			$mobj = DataObject::create();
 			if($value instanceof Object){
@@ -102,7 +102,7 @@ class ColorField extends DropdownField {
 				$mobj->CSSHex = $value->CSSHex;
 				$mobj->CSSCMYK = $value->CSSCMYK;
 			} else {
-				$cs = ColorSchemes::get()->filter('OPColor', $value)->first();
+				$cs = ColorScheme::get()->filter('OPColor', $value)->first();
 				if (!empty($cs)) {
 					$mobj->MyTitle = $cs->OPColor;
 					$mobj->Value = $cs->CSSColor;
