@@ -19,10 +19,7 @@ class ColorField extends DropdownField {
 		$source = ColorSchemes::get()->sort('ID')->map('CSSColor', 'OPColor');
 		parent::__construct($name, $title, $source, $value, $form, $emptyString);
         $this->toggleStar();
-		//Requirements::css(OPCOLORWORKINGFOLDER . '/css/OpColorField.css');
-		//Requirements::javascript(OPCOLORWORKINGFOLDER . '/javascript/OpColorField.js');
-		
-		
+        
 		Requirements::css('otago/opcolor: css/ColorField.css');
 		Requirements::javascript('otago/opcolor: javascript/ColorField.js');
 		
@@ -116,10 +113,7 @@ class ColorField extends DropdownField {
 			}
 			$obj->Options->push($mobj);
 		}
-//	public function forTemplate() {
-//		$shortname = (new \ReflectionClass($this))->getShortName();
-//		return $this->renderWith(array('Tiles/' . $shortname, $shortname));
-//	}
+        
 		
 		// directly point to the template file
 		$tmp = $obj->renderWith(["ColorField"]);
