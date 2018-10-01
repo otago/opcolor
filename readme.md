@@ -26,9 +26,9 @@ use the drop down to select your color
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 		// create the op color field
-        $colordropdown = ColorField::create('ClassOverride', 'Color Override', $this->ClassOverride);
-        $colordropdown->setEmptyString('');
-        $fields->addFieldToTab("Root.Main", $colordropdown, "Content");
+		$colordropdown = ColorField::create('ClassOverride', 'Color Override', $this->ClassOverride);
+		$colordropdown->setEmptyString('');
+		$fields->addFieldToTab("Root.Main", $colordropdown, "Content");
         
 		return $fields;
 	}
