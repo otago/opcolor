@@ -1,4 +1,4 @@
-# OPColorField
+# ColorField
 
 Creates a colour palette dropdown.
 
