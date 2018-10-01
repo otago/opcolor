@@ -1,6 +1,6 @@
 # ColorField
 
-Creates a colour palette dropdown.
+Creates a colour palette dropdown for SilverStripe 3 or 4.
 
 ## Color selector
 
