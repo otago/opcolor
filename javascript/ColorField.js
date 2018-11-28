@@ -5,7 +5,6 @@ jQuery('.cms .field.opcolor').entwine({
 		this._super();
 	},
 	onmatch: function() {
-		console.log('match!');
 		if(this.is('.no-chosen')) {
 			this._super();
 			return;
@@ -37,7 +36,6 @@ jQuery('.cms .field.opcolor').entwine({
 		return hash;
 	},
 	redrawTabs: function() {
-		console.log('redrawTabs');
 		// adding the DOM for the  dropdown
 		var selectcontainer = jQuery(this).children('.middleColumn').children('select');
 		var myid = selectcontainer.attr('id');
