@@ -70,7 +70,7 @@ jQuery('.cms .field.opcolor').entwine({
 				});
 			});
 		}
-		jQuery(_this).find('select').on('liszt:showing_dropdown', function () {
+		jQuery(_this).find('select').on('chosen:showing_dropdown', function () {
 			_this.find('li').hide();
 			_this.find('.chosen-search').remove();
 			rebuilddropdown(_this);
