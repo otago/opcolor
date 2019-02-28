@@ -40,6 +40,8 @@ jQuery('.cms .field.opcolor').entwine({
 		var selectcontainer = jQuery(this).children('.middleColumn').children('select');
 		var myid = selectcontainer.attr('id');
 		var _this = this;
+		// <li class="active-result" data-option-array-index="8" style="">OP Grey 20%</li>
+		
 		
 		var rebuilddropdown = function (mydropdown) {
 			var options = new Array();
@@ -63,20 +65,21 @@ jQuery('.cms .field.opcolor').entwine({
 					var spantext = '<strong>CMYK</strong><br/><span class=\"textColors\">'+cmyk;
 					spantext = spantext+'</span><br/><strong>RGB</strong><br/><span class=\"textColors\">'+rgb;
 					spantext = spantext+'<br/>'+hex+'</span>';
-
-					myid = myid + "_o_" + (idcount++);
-					resultsdiv.append('<li class=\"chosen-opcolor active-result\" id="'+myid+'">'+
+					myid = "_o_" + (idcount++);
+					resultsdiv.append('<li class=\"chosen-opcolor active-result\" id="'+myid+'" data-option-array-index="'+index+'">'+
 						spancolor+spantext+'</li>');
 				});
 			});
-		}
+			console.log('gfhgfhgh');
+		};
 		jQuery(_this).find('select').on('chosen:showing_dropdown', function () {
 			_this.find('li').hide();
 			_this.find('.chosen-search').remove();
 			rebuilddropdown(_this);
-		})
+		});
+			jQuery(_this).find('select').trigger("chosen:updated");
 		
-		if(jQuery('.opcolor').find('.chosen-container').size() == 0) {
+		if(jQuery('.opcolor').find('.chosen-container').size() === 0) {
 			if(jQuery(this).find('.chosen-container').size() > 0) 
 				return;
 
