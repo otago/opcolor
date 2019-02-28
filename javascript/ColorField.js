@@ -40,7 +40,6 @@ jQuery('.cms .field.opcolor').entwine({
 		var selectcontainer = jQuery(this).children('.middleColumn').children('select');
 		var myid = selectcontainer.attr('id');
 		var _this = this;
-		// <li class="active-result" data-option-array-index="8" style="">OP Grey 20%</li>
 		
 		
 		var rebuilddropdown = function (mydropdown) {
@@ -70,14 +69,12 @@ jQuery('.cms .field.opcolor').entwine({
 						spancolor+spantext+'</li>');
 				});
 			});
-			console.log('gfhgfhgh');
 		};
 		jQuery(_this).find('select').on('chosen:showing_dropdown', function () {
 			_this.find('li').hide();
 			_this.find('.chosen-search').remove();
 			rebuilddropdown(_this);
 		});
-			jQuery(_this).find('select').trigger("chosen:updated");
 		
 		if(jQuery('.opcolor').find('.chosen-container').size() === 0) {
 			if(jQuery(this).find('.chosen-container').size() > 0) 
