@@ -76,8 +76,8 @@ jQuery('.cms .field.opcolor').entwine({
 			rebuilddropdown(_this);
 		});
 		
-		if(jQuery('.opcolor').find('.chosen-container').size() === 0) {
-			if(jQuery(this).find('.chosen-container').size() > 0) 
+		if(jQuery('.opcolor').find('.chosen-container').length() === 0) {
+			if(jQuery(this).find('.chosen-container').length() > 0) 
 				return;
 
 			var checkColor = jQuery(this).find('.currentTitle').html();
