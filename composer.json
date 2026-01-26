@@ -12,7 +12,7 @@
 		"issues": "https://github.com/otago/opcolor/issues"
 	},
 	"require": {
-		"silverstripe/framework": "~5"
+		"silverstripe/framework": "~6"
 	},
 	"extra": {
 		"expose": [
