@@ -5,9 +5,9 @@
  */
 namespace OP;
 use SilverStripe\Forms\DropdownField;
-use SilverStripe\ORM\ArrayList;
+use SilverStripe\Model\List\ArrayList;
 use Exception;
-use SilverStripe\ORM\Map;
+use SilverStripe\Model\List\Map;
 use SilverStripe\View\Requirements;
 use SilverStripe\ORM\DataObject;
 
